@@ -21,6 +21,7 @@ public class SectionController {
         
     }
 
+    //Returns Section Titles and Numbers as JSON
     @GetMapping("{title}")
     public List<Section> getSectionsBySubjectTitle(
             @PathVariable("title") String title) {
@@ -29,6 +30,7 @@ public class SectionController {
         
     }
 
+    //Used in Admin console to add or update Section
     @PostMapping(path="post", consumes = "application/json")
     public void addOrUpdateSection(
         @RequestBody Section section) {
@@ -37,6 +39,7 @@ public class SectionController {
         
     }
 
+    //Used in Admin console to delete Section
     @DeleteMapping(path="delete", consumes = "application/json")
     public void deleteSection(
         @RequestBody Section section) {

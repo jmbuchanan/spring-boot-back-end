@@ -85,6 +85,7 @@ public class ContentService implements ContentRepository {
             new Object[] { Integer.parseInt(subjectId), content.getSectionNumber() }, String.class
         );
         
+	//ON CONFLICT...DO UPDATE is Postgres syntax for save if new or update if exists
         jdbcTemplate.update("INSERT INTO contents (section_id, paragraph_number, " +
                 "paragraph_text, code_example, image_pathway) VALUES " +
                 "(?, ?, ?, ?, ?) ON CONFLICT (section_id, paragraph_number) " +

@@ -21,6 +21,10 @@ public class ContentController {
         
     }
     
+    /*
+     * Returns Subject Title, Section ID, Paragraph Text,
+     * Code Examples, and Images as JSON
+     */
 
     @GetMapping("{title}")
     public List<Content> getContentsBySubjectTitle(
@@ -30,7 +34,7 @@ public class ContentController {
         
     }
      
-
+    //Service is called when using the Admin console to add Content
     @PostMapping(path="post", consumes = "application/json")
     public void addOrUpdateContent(
         @RequestBody Content content) {
@@ -39,7 +43,7 @@ public class ContentController {
         
     }
     
-
+    //Service is called when using the Admin console to delete Content
     @DeleteMapping(path="delete", consumes = "application/json")
     public void deleteContent(
         @RequestBody Content content) {

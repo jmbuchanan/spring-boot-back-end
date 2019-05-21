@@ -59,7 +59,8 @@ public class SectionService implements SectionRepository{
         return sections;
         
     }
-        
+       
+ 
         @Override
         public void saveSection(Section section) {
             
@@ -69,6 +70,8 @@ public class SectionService implements SectionRepository{
                 "SELECT id FROM subjects WHERE title = LOWER(?)",
                 new Object[] { section.getSubjectTitle() }, String.class);
             
+
+	    //ON CONFLICT...DO UPDATE is Postgres syntax for save if new or update if exists
             jdbcTemplate.update("INSERT INTO sections (subject_id, number, title) VALUES " +
                     "(?, ?, ?) ON CONFLICT (subject_id, number) DO UPDATE " +
                     "SET title = excluded.title",
