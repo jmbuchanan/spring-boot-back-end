@@ -1,0 +1,9 @@
+/home/matt/docker/spring-boot-back-end/src/main/java/com/matt/site/model/Content.java
+/home/matt/docker/spring-boot-back-end/src/main/java/com/matt/site/service/ContentService.java
+/home/matt/docker/spring-boot-back-end/src/main/java/com/matt/site/SiteApplication.java
+/home/matt/docker/spring-boot-back-end/src/main/java/com/matt/site/model/Section.java
+/home/matt/docker/spring-boot-back-end/src/main/java/com/matt/site/controller/SectionController.java
+/home/matt/docker/spring-boot-back-end/src/main/java/com/matt/site/repository/ContentRepository.java
+/home/matt/docker/spring-boot-back-end/src/main/java/com/matt/site/controller/ContentController.java
+/home/matt/docker/spring-boot-back-end/src/main/java/com/matt/site/service/SectionService.java
+/home/matt/docker/spring-boot-back-end/src/main/java/com/matt/site/repository/SectionRepository.java

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker build --build-arg PGUSER=$PGUSER --build-arg PGPASSWORD=$PGPASSWORD -t database:example .
+
+docker run -v /home/matt/docker/postgres/data:/var/lib/postgresql/data --name database -p 5433:5432 -d database:example

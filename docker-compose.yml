@@ -1,0 +1,25 @@
+version: '3'
+services:
+
+
+  database:
+    build: ./postgres
+    image: database:latest
+    ports:
+      - "5433:5432"
+    volumes:
+      - "/home/matt/docker/postgres/data:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_USER=${PGUSER}
+      - POSTGRES_PASSWORD=${PGPASSWORD}
+      - POSTGRES_DB=site_database
+  
+  tutorials:
+    build: ./spring-boot-back-end
+    image: spring-boot-backend/site:latest
+    ports:
+      - "8081:8080"
+    depends_on:
+      - database
+    links:
+      - database
